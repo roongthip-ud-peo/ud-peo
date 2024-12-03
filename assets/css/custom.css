@@ -3,3 +3,7 @@
     font-size: 0.9rem !important;
   }
 }
+
+li a {
+  font-family: "Kanit", sans-serif !important;
+}

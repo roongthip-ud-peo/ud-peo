@@ -1,0 +1,5 @@
+@media screen and (max-width: 490px) {
+  .sitename {
+    font-size: 0.9rem !important;
+  }
+}

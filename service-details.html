@@ -3,12 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Service Details - iLanding Bootstrap Template</title>
+    <title id="title"></title>
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
+    <link
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAh1BMVEVHcExfADN9AF+HH2yML3KQOnhzAFGqdJrVvc7u5uT7+fr////z7/Hj1N/Lr8S1iKjv5eu8mLOaUITFpLzPtsnax9b74Mr51bfwpVr2x6D0vo/umT7yrm3/9u3ztX7p4NL87+Lh0r2uikzdyajFp3W6mF3Gm0q9lUzJsYu7o3zFoWLQo07Op121Cz4nAAAAE3RSTlMAHGWQsdZC///////////////6YazwtgAAAc1JREFUeAFlkgW2pDAQRZHQhHopSCBIe6Np2//6Jhn79nBu+anov+IkFVkm0l30Q7sslwUBistcxF+ZqDRARrOigjhPP6G4ZgI3tpJsjWGgzD4xhcpwS13fd1BN3jL/p57JSnXDsO/7w/F0JmPR/qWC0ZZ0upyB4grcjntqSjRJYLvKp8OxAzBO0wzgcGlNizrATNuGBs/UMq3rtChPvS+1qa8mhy27C0Cbu6/+XAk4km2CayIL6T+AcStG52YVIncHaqmKI6FNeR4AzE5tj7tTzkMcUVqbRBmR6vYACnd/PJ+P+3YFMFDLPmkNpn0f4Louj2XZAsTlprQWHua299DnXJfl6eGIAI3xMCMghMX15cZxnDcX4EAETqNUc1MMATq3rs/VBRgKYpn4VlSJ4Rzg+ny+PfU5+z0kqjgMoeTuBNwm7/jyM1LBkSXC6IW2Vl16zO+7e23b/Tnj1LWVlomHcYVGY+iLAiAC1PW0R2upjoJEC6NxGW5AUHfswQYmOHplOvjeTsfL4XA6HiBbq6X4vya6MJYZt647A6qyJD8tUSaJ84a1Im5t49OI6JPSnMHcmqZkTW3t831WLOrgqXRr6jT6qV0qhEiTT+v+CykpLIvBCh55AAAAAElFTkSuQmCC"
+      rel="icon"
+    />
     <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
 
     <!-- Fonts -->
@@ -58,21 +61,21 @@
         class="header-container container-fluid container-xl position-relative d-flex align-items-center justify-content-between"
       >
         <a
-          href="index.html"
+          href="index.html#hero"
           class="logo d-flex align-items-center me-auto me-xl-0"
         >
           <!-- Uncomment the line below if you also wish to use an image logo -->
           <!-- <img src="assets/img/logo.png" alt=""> -->
-          <h1 class="sitename">iLanding</h1>
+          <h1 class="sitename">นิเทศออนไลน์ ศน.รุ่งทิพย์ พรหมหลวงศรี</h1>
         </a>
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#features">Features</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="index.html#about">เกี่ยวกับ</a></li>
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#services" class="active">Services</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
             <li class="dropdown">
               <a href="#"
                 ><span>Dropdown</span>
@@ -98,12 +101,11 @@
                 <li><a href="#">Dropdown 4</a></li>
               </ul>
             </li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html#contact">ติดต่อ</a></li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
-
-        <a class="btn-getstarted" href="index.html#about">Get Started</a>
+        <!-- <a class="btn-getstarted" href="index.html#about">Get Started</a> -->
       </div>
     </header>
 
@@ -111,11 +113,11 @@
       <!-- Page Title -->
       <div class="page-title light-background">
         <div class="container">
-          <h1>Service Details</h1>
+          <h1 id="title2"></h1>
           <nav class="breadcrumbs">
             <ol>
-              <li><a href="index.html">Home</a></li>
-              <li class="current">Service Details</li>
+              <li><a href="index.html">หน้าแรก</a></li>
+              <li class="current">รายละเอียดกิจกรรม</li>
             </ol>
           </nav>
         </div>
@@ -128,29 +130,18 @@
           <div class="row gy-5">
             <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
               <div class="service-box">
-                <h4>Serices List</h4>
-                <div class="services-list">
-                  <a href="#" class="active"
+                <h4>รายชื่อกิจกรรม</h4>
+                <div class="services-list pointer" id="services-list"></div>
+                <!-- <div class="services-list">
+                  <a onclick="seeDetails(13);" class="active"
                     ><i class="bi bi-arrow-right-circle"></i
                     ><span>Web Design</span></a
                   >
-                  <a href="#"
+                  <a onclick="seeDetails(13);" class="active"
                     ><i class="bi bi-arrow-right-circle"></i
                     ><span>Web Design</span></a
                   >
-                  <a href="#"
-                    ><i class="bi bi-arrow-right-circle"></i
-                    ><span>Product Management</span></a
-                  >
-                  <a href="#"
-                    ><i class="bi bi-arrow-right-circle"></i
-                    ><span>Graphic Design</span></a
-                  >
-                  <a href="#"
-                    ><i class="bi bi-arrow-right-circle"></i
-                    ><span>Marketing</span></a
-                  >
-                </div>
+                </div> -->
               </div>
               <!-- End Services List -->
 
@@ -186,6 +177,53 @@
             </div>
 
             <div
+              class="col-lg-8 ps-lg-5"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <img
+                src=""
+                alt=""
+                class="img-fluid services-img"
+                id="service-img"
+              />
+              <h3 id="service-title"></h3>
+              <p id="service-description"></p>
+              <ul>
+                <li>
+                  <i class="bi bi-check-circle"></i>
+                  <span>Aut eum totam accusantium voluptatem.</span>
+                </li>
+                <li>
+                  <i class="bi bi-check-circle"></i>
+                  <span
+                    >Assumenda et porro nisi nihil nesciunt voluptatibus.</span
+                  >
+                </li>
+                <li>
+                  <i class="bi bi-check-circle"></i>
+                  <span>Ullamco laboris nisi ut aliquip ex ea</span>
+                </li>
+              </ul>
+              <p>
+                Est reprehenderit voluptatem necessitatibus asperiores neque sed
+                ea illo. Deleniti quam sequi optio iste veniam repellat odit.
+                Aut pariatur itaque nesciunt fuga.
+              </p>
+              <p>
+                Sunt rem odit accusantium omnis perspiciatis officia. Laboriosam
+                aut consequuntur recusandae mollitia doloremque est architecto
+                cupiditate ullam. Quia est ut occaecati fuga. Distinctio ex
+                repellendus eveniet velit sint quia sapiente cumque. Et ipsa
+                perferendis ut nihil. Laboriosam vel voluptates tenetur nostrum.
+                Eaque iusto cupiditate et totam et quia dolorum in. Sunt
+                molestiae ipsum at consequatur vero. Architecto ut pariatur
+                autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit
+                dolore alias explicabo ea.
+              </p>
+            </div>
+
+            <!-- <div
               class="col-lg-8 ps-lg-5"
               data-aos="fade-up"
               data-aos-delay="200"
@@ -238,7 +276,7 @@
                 autem ad non cumque nesciunt qui maxime. Sunt eum quia impedit
                 dolore alias explicabo ea.
               </p>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
@@ -349,6 +387,6 @@
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
 
     <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/children.js"></script>
   </body>
 </html>

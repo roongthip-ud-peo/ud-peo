@@ -7,3 +7,7 @@
 li a {
   font-family: "Kanit", sans-serif !important;
 }
+
+.pointer {
+  cursor: pointer;
+}

@@ -1764,6 +1764,7 @@ section,
   color: var(--accent-color);
   font-weight: 500;
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .services .service-card .read-more i {

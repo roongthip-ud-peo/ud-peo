@@ -191,9 +191,95 @@
   document.addEventListener("scroll", navmenuScrollspy)
 })()
 
+var title_not_found = "ไม่พบข้อมูล"
+var desc_not_found = "ไม่พบข้อมูลที่ท่านค้นหา"
+
 function seeDetails(id) {
   // const url = "service-details.html?id=" + id
   // window.open(url, "_blank")
 
   window.location.href = "service-details.html?id=" + id
 }
+
+// Get the ID parameter from the URL
+const params = new URLSearchParams(window.location.search)
+const id = parseInt(params.get("id"), 10) // Convert to a number
+
+// Fetch data from the JSON file
+fetch("assets/json/banner.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Failed to fetch data")
+    }
+    return response.json()
+  })
+  .then((data) => {
+    // Find the service object matching the ID
+    const service = data.find((item) => item.id === id)
+
+    if (service) {
+      // Update the HTML elements with the data
+      document.getElementById("service-img").src = service.image
+      document.getElementById("service-title").textContent = service.title
+      document.getElementById("service-description").textContent =
+        service.description
+      document.getElementById("title").innerText = service.title
+    } else {
+      // Handle case where ID is not found
+      document.getElementById("service-title").textContent = title_not_found
+      document.getElementById("service-description").textContent =
+        desc_not_found
+      document.getElementById("title").innerText = title_not_found
+      document.getElementById("title2").innerText = title_not_found
+    }
+  })
+  .catch((error) => {
+    console.error("Error loading data:", error)
+  })
+
+// Fetch data from the JSON file
+fetch("assets/json/banner.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Failed to fetch data")
+    }
+    return response.json()
+  })
+  .then((data) => {
+    const servicesList = document.getElementById("services-list")
+
+    // Clear the existing list before adding new items
+    servicesList.innerHTML = ""
+
+    // Loop through the JSON data
+    data.forEach((item) => {
+      // Create the <a> element
+      const link = document.createElement("a")
+
+      // Add 'active' class if the item ID matches the URL parameter
+      if (item.id === id) {
+        link.classList.add("active")
+      }
+
+      // Set the onclick event handler to call seeDetails with the item's id
+      link.setAttribute("onclick", `seeDetails(${item.id})`)
+
+      // Create the <i> element for the icon
+      const icon = document.createElement("i")
+      icon.classList.add("bi", "bi-arrow-right-circle")
+
+      // Create the <span> element for the text
+      const text = document.createElement("span")
+      text.textContent = item.title // Assuming your JSON has a 'title' field
+
+      // Append the icon and text to the link
+      link.appendChild(icon)
+      link.appendChild(text)
+
+      // Append the <a> to the services list
+      servicesList.appendChild(link)
+    })
+  })
+  .catch((error) => {
+    console.error("Error loading data:", error)
+  })

@@ -11,3 +11,7 @@ li a {
 .pointer {
   cursor: pointer;
 }
+
+.whitespace {
+  white-space: pre-wrap;
+}

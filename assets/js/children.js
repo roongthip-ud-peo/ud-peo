@@ -224,6 +224,7 @@ fetch("assets/json/banner.json")
       document.getElementById("service-description").textContent =
         service.description
       document.getElementById("title").innerText = service.title
+      document.getElementById("title2").innerText = service.title
     } else {
       // Handle case where ID is not found
       document.getElementById("service-title").textContent = title_not_found
